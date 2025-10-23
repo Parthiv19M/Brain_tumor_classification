@@ -18,21 +18,23 @@ A state-of-the-art deep learning model for classifying brain tumor MRI scans int
 
 ## 📊 Model Performance
 
-| Model | Test Accuracy | Precision | Recall | AUC |
-|-------|--------------|-----------|--------|-----|
-| Baseline CNN | 89.3% | 0.89 | 0.89 | 0.98 |
-| EfficientNetB0 (Ours) | 94.1% | 0.94 | 0.94 | 0.99 |
-| ResNet50V2 (Ours) | 93.7% | 0.93 | 0.94 | 0.99 |
+| Model                 | Test Accuracy | Precision | Recall | AUC  |
+| --------------------- | ------------- | --------- | ------ | ---- |
+| Baseline CNN          | 89.3%         | 0.89      | 0.89   | 0.98 |
+| EfficientNetB0 (Ours) | 94.1%         | 0.94      | 0.94   | 0.99 |
+| ResNet50V2 (Ours)     | 93.7%         | 0.93      | 0.94   | 0.99 |
 
 ## 🛠 Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/Parthiv19M/Brain_tumor_classification.git
    cd Brain_tumor_classification
    ```
 
 2. Create and activate a virtual environment (recommended):
+
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -48,6 +50,7 @@ A state-of-the-art deep learning model for classifying brain tumor MRI scans int
 ### Training
 
 Train the model with default settings (EfficientNetB0):
+
 ```bash
 python src/train.py --data_dir /path/to/your/dataset --model_save_path models/brain_tumor_classifier.h5
 ```
@@ -55,6 +58,7 @@ python src/train.py --data_dir /path/to/your/dataset --model_save_path models/br
 ### Evaluation
 
 Evaluate a trained model:
+
 ```bash
 python src/evaluate.py --model_path models/brain_tumor_classifier.h5 --test_dir /path/to/test/data
 ```
@@ -62,6 +66,7 @@ python src/evaluate.py --model_path models/brain_tumor_classifier.h5 --test_dir 
 ### Prediction
 
 Make predictions on new MRI scans:
+
 ```bash
 python src/predict.py --model_path models/brain_tumor_classifier.h5 --image_path /path/to/mri/scan.jpg
 ```
@@ -90,9 +95,11 @@ Brain_tumor_classification/
 ## 📈 Results
 
 ### Training History
+
 ![Training History](reports/figures/training_history.png)
 
 ### Confusion Matrix
+
 ![Confusion Matrix](reports/figures/confusion_matrix.png)
 
 ## 🤝 Contributing
