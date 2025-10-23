@@ -35,7 +35,7 @@ A state-of-the-art deep learning model for classifying brain tumor MRI scans int
 2. Create and activate a virtual environment (recommended):
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 3. Install the required packages:
@@ -49,50 +49,45 @@ A state-of-the-art deep learning model for classifying brain tumor MRI scans int
 
 Train the model with default settings (EfficientNetB0):
 ```bash
-python -m src.models.train \
-  --data_dir /path/to/your/data \
-  --model_save_path models/brain_tumor_model.h5
+python src/train.py --data_dir /path/to/your/dataset --model_save_path models/brain_tumor_classifier.h5
 ```
 
-### Advanced Training Options
+### Evaluation
 
+Evaluate a trained model:
 ```bash
-python -m src.models.train \
-  --data_dir /path/to/your/data \
-  --model_save_path models/brain_tumor_model.h5 \
-  --epochs 30 \
-  --batch_size 32 \
-  --base_model ResNet50V2 \
-  --fine_tune_epochs 10 \
-  --learning_rate 1e-4
+python src/evaluate.py --model_path models/brain_tumor_classifier.h5 --test_dir /path/to/test/data
 ```
 
-### Available Models
-- `EfficientNetB0` (default)
-- `ResNet50V2`
-- `DenseNet121`
-- `MobileNetV2`
+### Prediction
 
-## 📂 Project Structure
+Make predictions on new MRI scans:
+```bash
+python src/predict.py --model_path models/brain_tumor_classifier.h5 --image_path /path/to/mri/scan.jpg
+```
+
+## 📁 Project Structure
 
 ```
 Brain_tumor_classification/
-├── data/                    # Dataset directory (not included in repo)
-├── models/                  # Saved models
-├── notebooks/               # Jupyter notebooks for exploration
-├── reports/                 # Generated reports and figures
-│   └── figures/             # Training plots and confusion matrices
-├── src/                     # Source code
-│   ├── data/                # Data loading and preprocessing
-│   └── models/              # Model definitions and training
+├── data/                   # Dataset directory (not included in repo)
+├── models/                 # Saved models
+├── notebooks/              # Jupyter notebooks for exploration
+├── reports/                # Generated reports and figures
+├── src/
+│   ├── data/               # Data loading and preprocessing
+│   ├── models/             # Model architectures
+│   ├── train.py            # Training script
+│   ├── evaluate.py         # Evaluation script
+│   └── predict.py          # Prediction script
+├── tests/                  # Unit tests
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-├── requirements.txt         # Python dependencies
-└── setup.py                # Package configuration
+└── requirements.txt
 ```
 
-## 📈 Training Visualization
+## 📈 Results
 
 ### Training History
 ![Training History](reports/figures/training_history.png)
@@ -100,44 +95,37 @@ Brain_tumor_classification/
 ### Confusion Matrix
 ![Confusion Matrix](reports/figures/confusion_matrix.png)
 
-## 🧪 Testing the Model
-
-After training, you can evaluate the model on the test set:
-
-```python
-import tensorflow as tf
-from src.models.model import create_model
-
-# Load the trained model
-model = tf.keras.models.load_model('models/brain_tumor_model.h5')
-
-# Evaluate on test set
-test_loss, test_accuracy = model.evaluate(test_dataset)
-print(f"Test accuracy: {test_accuracy:.4f}")
-```
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📜 License
+## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 📧 Contact
+
+Parthiv - [@your_twitter](https://twitter.com/your_twitter) - your-email@example.com
+
+Project Link: [https://github.com/Parthiv19M/Brain_tumor_classification](https://github.com/Parthiv19M/Brain_tumor_classification)
 
 ## 🙏 Acknowledgments
 
-- Dataset: [Brain Tumor Classification (MRI)](https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri)
-- TensorFlow Team for the amazing deep learning framework
-- All contributors who helped improve this project
+- [Kaggle Brain Tumor Classification Dataset](https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri)
+- [TensorFlow](https://www.tensorflow.org/)
+- [Keras](https://keras.io/)
+- [scikit-learn](https://scikit-learn.org/)
 
----
+## 🔍 Future Improvements
 
-<div align="center">
-  Made with ❤️ by Parthiv | <a href="https://github.com/Parthiv19M">GitHub</a>
-</div>
+- [ ] Add support for 3D MRI scans
+- [ ] Implement Grad-CAM for model interpretability
+- [ ] Create a web interface for predictions
+- [ ] Add support for more pre-trained models
+- [ ] Implement cross-validation for more robust evaluation
