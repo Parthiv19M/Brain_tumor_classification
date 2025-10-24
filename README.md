@@ -120,7 +120,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Parthiv - parthivmeduri19@gmail.com
 
-KL Saketh - (https://github.com/klsaketh7-psl)
+KL Saketh - https://github.com/klsaketh7-psl
 
 ## 🙏 Acknowledgments
 
