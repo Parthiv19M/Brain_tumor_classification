@@ -120,7 +120,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Parthiv - parthivmeduri19@gmail.com
 
-Project Link: [https://github.com/Parthiv19M/Brain_tumor_classification](https://github.com/Parthiv19M/Brain_tumor_classification)
+KL Saketh - (https://github.com/klsaketh7-psl)
 
 ## 🙏 Acknowledgments
 
