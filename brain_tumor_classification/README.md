@@ -5,15 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/Parthiv19M/Brain_tumor_classification?style=social)](https://github.com/Parthiv19M/Brain_tumor_classification/stargazers)
 
-![Project Banner](static/images/banner.jpg)
-
 A state-of-the-art deep learning model for classifying brain tumor MRI scans into different categories using transfer learning with TensorFlow and Keras.
-
-## 👥 Team Members
-- **Parthiv Sarma Meduri** (Team Lead) - parthiv.meduri@example.com
-- **Nihitha Meduri** (Research Lead) - nihitha.meduri@example.com
-- **Sai Pavani** (Data Scientist) - sai.pavani@example.com
-- **Kavya** (ML Engineer) - kavya@example.com
 
 ## 🚀 Features
 
@@ -23,7 +15,6 @@ A state-of-the-art deep learning model for classifying brain tumor MRI scans int
 - **Comprehensive Evaluation**: Accuracy, Precision, Recall, AUC, and Confusion Matrix
 - **Visualization**: Training history and model performance plots
 - **Easy to Use**: Simple command-line interface
-- **Web Interface**: Professional landing page for demo and presentation
 
 ## 📊 Model Performance
 
@@ -50,7 +41,6 @@ A state-of-the-art deep learning model for classifying brain tumor MRI scans int
    ```
 
 3. Install the required packages:
-
    ```bash
    pip install -r requirements.txt
    ```
@@ -81,34 +71,38 @@ Make predictions on new MRI scans:
 python src/predict.py --model_path models/brain_tumor_classifier.h5 --image_path /path/to/mri/scan.jpg
 ```
 
-### Web Demo
-
-Run the Flask landing page:
-
-```bash
-python app.py
-```
-
-Then visit http://localhost:5000 to see the demo.
-
 ## 📁 Project Structure
 
 ```
 Brain_tumor_classification/
-├── static/                 # Static files for web app
-├── templates/              # HTML templates
-├── src/                    # Source code
+├── app.py                    # Flask web application
+├── run.sh                   # Launch script
+├── requirements.txt         # Python dependencies
+├── .gitignore              # Git ignore rules
+├── data/                   # Dataset directory (not included in repo)
+├── models/                 # Saved models
+├── notebooks/              # Jupyter notebooks for exploration
+├── src/
+│   ├── __init__.py
 │   ├── data/               # Data loading and preprocessing
 │   ├── models/             # Model architectures
 │   ├── train.py            # Training script
 │   ├── evaluate.py         # Evaluation script
 │   └── predict.py          # Prediction script
+├── templates/              # HTML templates
+│   ├── index.html          # Main landing page
+│   ├── 404.html            # Error pages
+│   └── 500.html
+├── static/                 # Static assets
+│   ├── css/
+│   │   └── style.css       # Modern styling
+│   └── js/
+│       └── script.js       # Interactive features
+├── uploads/                # File upload directory
 ├── tests/                  # Unit tests
-├── app.py                  # Flask web application
 ├── .gitignore
 ├── LICENSE
-├── README.md
-└── requirements.txt
+└── README.md
 ```
 
 ## 📈 Results
@@ -148,10 +142,62 @@ Project Link: [https://github.com/Parthiv19M/Brain_tumor_classification](https:/
 - [Keras](https://keras.io/)
 - [scikit-learn](https://scikit-learn.org/)
 
+## 🌐 Web Interface
+
+A beautiful, modern web application for brain tumor classification with real-time predictions.
+
+### Features:
+- **Professional Landing Page** with author information and project showcase
+- **Interactive Demo** with drag-and-drop file upload
+- **Real-time Predictions** with confidence scores and probability distributions
+- **Responsive Design** optimized for all devices
+- **Modern UI/UX** with smooth animations and professional styling
+
+### Running the Web Application:
+
+1. **Quick Start:**
+   ```bash
+   ./run.sh
+   ```
+
+2. **Manual Setup:**
+   ```bash
+   # Create virtual environment
+   python3 -m venv venv
+   source venv/bin/activate
+
+   # Install dependencies
+   pip install -r requirements.txt
+
+   # Run the application
+   python app.py
+   ```
+
+3. **Access the Application:**
+   - Open your browser and go to: `http://localhost:5000`
+   - Upload MRI scans for instant classification
+   - View detailed results with confidence scores
+
+### Web App Structure:
+```
+├── app.py                 # Flask web application
+├── templates/
+│   ├── index.html        # Main landing page
+│   ├── 404.html          # Error pages
+│   └── 500.html
+├── static/
+│   ├── css/style.css     # Modern styling
+│   └── js/script.js      # Interactive features
+├── uploads/              # File upload directory
+└── run.sh               # Launch script
+```
+
 ## 🔍 Future Improvements
 
 - [ ] Add support for 3D MRI scans
 - [ ] Implement Grad-CAM for model interpretability
-- [ ] Create a web interface for predictions
+- [x] Create a web interface for predictions ✨
 - [ ] Add support for more pre-trained models
 - [ ] Implement cross-validation for more robust evaluation
+- [ ] Add user authentication and result history
+- [ ] Deploy to cloud platform (Heroku, AWS, etc.)

@@ -19,29 +19,25 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Virtual Environment
+# Virtual environments
+.env
+.venv
+env/
 venv/
 ENV/
+env.bak/
+venv.bak/
 
-# IDE
-.idea/
+# IDEs
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Environment variables
-.env
-
-# Logs
-logs/
-*.log
-
-# Local data
-data/
-*.pth
-*.h5
-*.hdf5
-
-# OS generated files
+# OS
 .DS_Store
 .DS_Store?
 ._*
@@ -49,3 +45,38 @@ data/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Model files (if large)
+*.h5
+*.pkl
+*.joblib
+
+# Upload directories
+uploads/
+static/uploads/
+
+# Reports and outputs
+reports/
+*.png
+*.jpg
+*.pdf
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Data directories
+data/raw/
+data/processed/
+data/interim/
+
+# GitHub
+.git/
+.gitignore
