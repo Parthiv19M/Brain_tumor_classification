@@ -131,7 +131,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 Contact
 
-Parthiv - [@your_twitter](https://twitter.com/your_twitter) - your-email@example.com
+Parthiv Meduri - 
+
+KL Saketh - https://github.com/klsaketh7-psl
 
 Project Link: [https://github.com/Parthiv19M/Brain_tumor_classification](https://github.com/Parthiv19M/Brain_tumor_classification)
 
