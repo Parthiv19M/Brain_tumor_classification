@@ -118,9 +118,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 Contact
 
-Parthiv - parthivmeduri19@gmail.com
+Parthiv Meduri - parthivmeduri19@gmail.com
 
-KL Saketh - https://github.com/klsaketh7-psl
+KL Saketh - klsaketh@gmail.com
 
 ## 🙏 Acknowledgments
 
